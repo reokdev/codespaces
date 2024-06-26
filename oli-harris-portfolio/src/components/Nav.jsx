@@ -1,10 +1,11 @@
 import React from 'react';
+import './Nav.css'
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
-        <nav style={{ padding: '10px' }}>
-            <ul style={{ listStyleType: 'none', display: 'flex', gap: '10px' }}>
+        <nav className='navbar'>
+            <ul className="pages">
                 <li>
                     <Link to="/">Home</Link>
                 </li>
