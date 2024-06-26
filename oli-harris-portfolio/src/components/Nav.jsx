@@ -1,9 +1,22 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Nav() {
-  return (
-    <div>Nav</div>
-  )
-}
+const Nav = () => {
+    return (
+        <nav style={{ padding: '10px' }}>
+            <ul style={{ listStyleType: 'none', display: 'flex', gap: '10px' }}>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/profile">Profile</Link>
+                </li>
+                <li>
+                    <Link to="/contact">Contact</Link>
+                </li>
+            </ul>
+        </nav>
+    );
+};
 
-export default Nav
+export default Nav;
