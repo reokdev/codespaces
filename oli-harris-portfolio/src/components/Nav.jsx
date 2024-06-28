@@ -1,22 +1,24 @@
 import React from 'react';
-import './Nav.css'
-import { Link } from 'react-router-dom';
+import './Nav.css';
+import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
     return (
-        <nav className='navbar'>
-            <ul className="pages">
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/profile">Profile</Link>
-                </li>
-                <li>
-                    <Link to="/contact">Contact</Link>
-                </li>
-            </ul>
-        </nav>
+        <div className='navbar-container'>
+            <nav className='navbar'>
+                <ul className="pages">
+                    <li>
+                        <NavLink to="/home" end className={({ isActive }) => isActive ? 'active-link' : undefined}>Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/profile" className={({ isActive }) => isActive ? 'active-link' : undefined}>Profile</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/contact" className={({ isActive }) => isActive ? 'active-link' : undefined}>Contact</NavLink>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     );
 };
 

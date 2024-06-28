@@ -1,0 +1,44 @@
+.header {
+    font-size: 48px; /* Base font size */
+    line-height: 1.2; /* Line height for readability */
+    font-weight: 600; /* Bold font weight */
+    text-align: center; /* Center the text */
+    margin: 40px 0; /* Top and bottom margin */
+    color: #000000; /* Text color */
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.no-outline {
+    padding: 10px;
+}
+
+.outline {
+    background-color: #e8e5e480;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+/* Adjust font size for smaller screens */
+@media (max-width: 768px) {
+    .header {
+        font-size: 36px; /* Smaller font size for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 24px; /* Smaller font size for small screens */
+    }
+}
+
+.header p {
+    margin: 0; /* Remove extra margin */
+}

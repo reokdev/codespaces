@@ -1,14 +1,69 @@
-.navbar {
-    display: flex;
-    padding: '10px';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
     width: 100%;
+    font-family: 'Open Sans', sans-serif; /* Use Open Sans font */
+    font-size: 14px;
+}
+
+.navbar-container {
+    display: flex;
     justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    position: fixed; /* Make the navbar fixed to the top */
+    top: 20px; /* Adjust the top spacing as needed */
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+.navbar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(232, 229, 228, 0.5); /* Semi-transparent background with specific color */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    padding: 10px;
+    border-radius: 30px; /* Make the background rounded */
 }
 
 .pages {
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
-    padding: 0;
-    gap: 10px;
+    gap: 20px;
+    padding: 4px 0;
+    margin: 0;
+    border-radius: 30px; /* Make the background rounded */
+}
+
+a {
+    text-decoration: none;
+}
+
+.pages li {
+    margin: 0 10px;
+}
+
+.pages li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 20px; /* Make individual links rounded */
+    transition: background-color 0.3s, color 0.3s;
+    margin: -10px; /* Negative margin to make the link flush with the menu background */
+
+}
+
+.pages li a.active-link {
+    background-color: #ffffff;
+    color: black;
+    border-radius: 20px; /* Ensure the active link remains rounded */
+    padding: 10px 20px;
+    margin: -10px; /* Negative margin to make the link flush with the menu background */
+}
+
+.pages li a:hover {
+    background-color: #e0e0e0; /* Optional: hover effect */
 }
