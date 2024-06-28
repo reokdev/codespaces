@@ -1,0 +1,92 @@
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create two columns */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center; /* Center the grid items */
+}
+
+.image-item {
+    position: relative;
+    width: 100%;
+    padding-top: calc(546.17 / 715 * 100%); /* Maintain aspect ratio */
+    overflow: hidden;
+    border-radius: 15px; /* Rounded corners */
+}
+
+.image-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Ensure image corners are rounded */
+    transition: filter 0.3s; /* Smooth transition for blur effect */
+}
+
+.image-item:hover img {
+    filter: blur(5px); /* Blur effect on hover */
+}
+
+.image-alt {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s; /* Smooth transition for text opacity */
+}
+
+.image-item:hover .image-alt {
+    opacity: 1; /* Show text on hover */
+}
+
+/* Media query for tablets and smaller screens */
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 0; /* No gap between items */
+        padding: 0; /* No padding */
+        margin: 0 30px;
+    }
+
+    .image-item {
+        max-width: 100%; /* Allow image item to take full width */
+        border-radius: 0; /* Remove rounded corners */
+        padding-top: 0; /* Maintain aspect ratio */
+
+    }
+
+    .image-item img {
+        border-radius: 15px; /* Ensure image corners are not rounded */
+        position: static; /* Remove absolute positioning */
+        width: 100%;
+        height: auto; /* Let the image take its natural height */
+        filter: none; /* Remove filter effect */
+        transition: none; /* Remove transition effect */
+    }
+
+    .image-item:hover img {
+        filter: none; /* Ensure no blur effect on hover */
+    }
+
+    .image-alt {
+        position: static; /* Remove absolute positioning */
+        background-color: transparent; /* Remove background color */
+        color: black; /* Change text color to black */
+        padding: 10px 0; /* Adjust padding */
+        font-size: 14px; /* Adjust font size */
+        text-align: center; /* Center the text */
+        opacity: 1; /* Ensure text is always visible */
+        transition: none; /* Remove transition effect */
+    }
+
+    .image-item:hover .image-alt {
+        opacity: 1; /* Ensure text is always visible on hover */
+    }
+}
